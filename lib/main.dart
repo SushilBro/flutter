@@ -7,7 +7,7 @@ import 'package:samagyan_attendence/pages/login.dart';
 import 'package:samagyan_attendence/pages/secureData.dart';
 import 'package:samagyan_attendence/pages/easyAttendance.dart';
 void main() => runApp(MaterialApp(
-   initialRoute: '/loading',
+   initialRoute: '/homePageSamagyan',
   routes: {
      '/home' : (context) => Home(),
      '/easyAttendance' : (context) => easyAttendance(),

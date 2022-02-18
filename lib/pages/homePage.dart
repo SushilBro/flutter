@@ -1,12 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:samagyan_attendence/pages/home.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:samagyan_attendence/pages/class_.dart';
+import 'package:samagyan_attendence/pages/firstHomePage.dart';
+import 'package:samagyan_attendence/pages/secondHomePage.dart';
 class HomePageSamagyan extends StatefulWidget {
   @override
   _HomePageSamagyanState createState() => _HomePageSamagyanState();
 }
 
 class _HomePageSamagyanState extends State<HomePageSamagyan> {
+  var position='first_home_page';
+
+  bool button_icon=true;
+  Widget? _nextHomePage() {
+    if (position == 'first_home_page') {
+      setState(() {
+
+      });
+      return secondHomePage();
+    }
+    else if (position == 'second_home_page') {
+      setState(() {
+
+      });
+      return FirstHomePage();
+    }
+
+  }
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //
+  //   // getData();
+  //   // print('it runs only once when the page is loaded');
+  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,424 +133,32 @@ class _HomePageSamagyanState extends State<HomePageSamagyan> {
                 ),
               ),
               Container(
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                          height: 120.0,
-                        child: Column(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 120.0,
-                              child: Card(
-                                elevation:5,
-                                child: Column(
-                                  children: <Widget>[
-                                    Center(
-                                      child: Icon(
-                                          Icons.departure_board_rounded,
-                                        size: 50,
-                                        color: Colors.blue,
-                                      ),
-                                    ),
-                                    Text('Transport')
-                                  ],
-                                ),
-                              ),
-                            ),
-
-                          ],
-
-                        ),
-                      ),
-                    ),
-
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                        height: 120.0,
-                        child: Column(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 120.0,
-                              child: Card(
-                                elevation:5,
-                                child: Column(
-                                  children: <Widget>[
-                                    Center(
-                                      child: Text(
-                                        'E',
-                                        style: TextStyle(
-                                          color: Colors.blue,
-                                          fontSize: 50,
-                                          fontWeight: FontWeight.bold
-                                        ),
-                                      )
-                                    ),
-                                    Text('Exam')
-                                  ],
-                                ),
-                              ),
-                            ),
-
-                          ],
-
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                        height: 120.0,
-                        child: Column(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 120.0,
-                              child: Card(
-                                elevation:5,
-                                child: Column(
-                                  children: <Widget>[
-                                    Center(
-                                      child: Text(
-                                        'A',
-                                        style: TextStyle(
-                                            color: Colors.blue,
-                                            fontSize: 50,
-                                            fontWeight: FontWeight.bold
-                                        ),
-                                      ),
-                                    ),
-                                    Text('Results')
-                                  ],
-                                ),
-                              ),
-                            ),
-
-                          ],
-
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                child: _nextHomePage(),
               ),
-              Container(
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                        height: 120.0,
-                        child: Column(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 120.0,
-                              child: Card(
-                                elevation:5,
-                                child: Column(
-                                  children: <Widget>[
-                                    Center(
-                                      child: Icon(
-                                        Icons.photo_library_rounded,
-                                        size: 50,
-                                        color: Colors.blue,
-                                      ),
-                                    ),
-                                    Text('Gallery')
-                                  ],
-                                ),
-                              ),
-                            ),
 
-                          ],
-
-                        ),
-                      ),
-                    ),
-
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                        height: 120.0,
-                        child: Column(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 120.0,
-                              child: Card(
-                                elevation:5,
-                                child: Column(
-                                  children: <Widget>[
-                                    Center(
-                                        child: Icon(
-                                            Icons.add_to_photos_rounded,
-                                            size: 50,
-                                            color: Colors.blue,
-                                        )
-                                    ),
-                                    Text('Homework')
-                                  ],
-                                ),
-                              ),
-                            ),
-
-                          ],
-
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                        height: 120.0,
-                        child: Column(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 120.0,
-                              child: Card(
-                                elevation:5,
-                                child: Column(
-                                  children: <Widget>[
-                                    Center(
-                                      child: Icon(
-                                        Icons.home,
-                                        size: 50,
-                                        color: Colors.blue,
-                                      )
-                                    ),
-                                    Text('Library')
-                                  ],
-                                ),
-                              ),
-                            ),
-
-                          ],
-
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                        height: 120.0,
-                        child: Column(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 120.0,
-                              child: Card(
-                                elevation:5,
-                                child: Column(
-                                  children: <Widget>[
-                                    Center(
-                                      child: Icon(
-                                        Icons.grading_rounded,
-                                        size: 50,
-                                        color: Colors.blue,
-                                      ),
-                                    ),
-                                    Text('Reports')
-                                  ],
-                                ),
-                              ),
-                            ),
-
-                          ],
-
-                        ),
-                      ),
-                    ),
-
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                        height: 120.0,
-                        child: Column(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 120.0,
-                              child: Card(
-                                elevation:5,
-                                child: Column(
-                                  children: <Widget>[
-                                    Center(
-                                        child: Icon(
-                                          Icons.account_box_rounded,
-                                          size: 50,
-                                          color: Colors.blue,
-                                        ),
-                                    ),
-                                    Text('Admin')
-                                  ],
-                                ),
-                              ),
-                            ),
-
-                          ],
-
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                        height: 120.0,
-                        child: Column(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 120.0,
-                              child: Card(
-                                elevation:5,
-                                child: Column(
-                                  children: <Widget>[
-                                    Center(
-                                      child: Icon(
-                                        Icons.person_add,
-                                        size: 50,
-                                        color: Colors.blue,
-                                      ),
-                                    ),
-                                    Text('HR')
-                                  ],
-                                ),
-                              ),
-                            ),
-
-                          ],
-
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                        height: 120.0,
-                        child: Column(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 120.0,
-                              child: Card(
-                                elevation:5,
-                                child: Column(
-                                  children: <Widget>[
-                                    Center(
-                                      child: Icon(
-                                        Icons.settings,
-                                        size: 50,
-                                        color: Colors.blue,
-                                      ),
-                                    ),
-                                    Text('Settings')
-                                  ],
-                                ),
-                              ),
-                            ),
-
-                          ],
-
-                        ),
-                      ),
-                    ),
-
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                        height: 120.0,
-                        child: Column(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 120.0,
-                              child: Card(
-                                elevation:5,
-                                child: Column(
-                                  children: <Widget>[
-                                    Center(
-                                        child: Text(
-                                          'E',
-                                          style: TextStyle(
-                                              color: Colors.blue,
-                                              fontSize: 50,
-                                              fontWeight: FontWeight.bold
-                                          ),
-                                        )
-                                    ),
-                                    Text('Exam')
-                                  ],
-                                ),
-                              ),
-                            ),
-
-                          ],
-
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                        height: 120.0,
-                        child: Column(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 120.0,
-                              child: GestureDetector(
-                                onTap: (){
-
-                                },
-                                child: Card(
-                                  elevation:5,
-                                  child: Column(
-                                    children: <Widget>[
-                                      Center(
-                                        child: Text(
-                                          'A',
-                                          style: TextStyle(
-                                              color: Colors.blue,
-                                              fontSize: 50,
-                                              fontWeight: FontWeight.bold
-                                          ),
-                                        ),
-                                      ),
-                                      Text('Results')
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-
-                          ],
-
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
 
             ],
           ),
 
       ),
       floatingActionButton: FloatingActionButton(
-
         onPressed: (){
+          if(position=='first_home_page' || button_icon){
+            setState(() {
+              position = 'second_home_page';
+              button_icon = false;
+            });
+          }
+          else if(position=='second_home_page'){
+            setState(() {
+              position ='first_home_page';
+              button_icon = true;
+            });
+          }
 
         },
         backgroundColor: Colors.blue,
-        child: Icon(
-          Icons.arrow_drop_down
-        ),
+        child: Icon(button_icon? Icons.arrow_drop_down : Icons.arrow_drop_up_outlined),
 
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -539,7 +174,7 @@ class _HomePageSamagyanState extends State<HomePageSamagyan> {
           label: 'Calander'),
           BottomNavigationBarItem(icon: Icon(Icons.notifications_active,color: Colors.white,),
           label: 'Notifications')
-          
+
 
         ],
       ),
