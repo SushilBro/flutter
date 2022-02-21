@@ -1,49 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:samagyan_attendence/pages/class_.dart';
-import 'package:samagyan_attendence/pages/firstHomePage.dart';
-import 'package:samagyan_attendence/pages/secondHomePage.dart';
-class HomePageSamagyan extends StatefulWidget {
+import 'package:samagyan_attendence/pages/Notification/allTabContainer.dart';
+class NotificationMain extends StatefulWidget {
   @override
-  _HomePageSamagyanState createState() => _HomePageSamagyanState();
+  _NotificationMainState createState() => _NotificationMainState();
 }
 
-class _HomePageSamagyanState extends State<HomePageSamagyan> {
-  var position='first_home_page';
-
-  bool button_icon=true;
+class _NotificationMainState extends State<NotificationMain> {
+  var position='all';
   Widget? _nextHomePage() {
-    if (position == 'first_home_page') {
+    if (position == 'all') {
       setState(() {
 
       });
-      return secondHomePage();
+      return NotificationAllTab();
     }
-    else if (position == 'second_home_page') {
+    else if (position == 'MyClass') {
       setState(() {
 
       });
-      return FirstHomePage();
     }
 
   }
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //
-  //   // getData();
-  //   // print('it runs only once when the page is loaded');
-  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Dashboard',
+          'Notifications',
           style: TextStyle(
             color: Colors.white,
           ),
         ),
+        elevation: 0,
 
       ),
       drawer: Drawer(
@@ -55,15 +44,15 @@ class _HomePageSamagyanState extends State<HomePageSamagyan> {
                 color: Colors.blue,
               ),
               child: Text('Sushil Gautam',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20
-              ),),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20
+                ),),
             ),
             ListTile(
               title: const Text('Samata Shikshya Niketan Secondary School, Pokhara-18',
                 style: TextStyle(
-                  fontSize: 18
+                    fontSize: 18
                 ),
               ),
               onTap: (){
@@ -118,65 +107,62 @@ class _HomePageSamagyanState extends State<HomePageSamagyan> {
         ),
       ),
       body: Container(
-          child: Column(
-            children: <Widget>[
-              Container(
-                height: 50,
-                color: Colors.grey[300],
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+        child: Column(
+          children: <Widget>[
+            Container(
+              height: 50,
+              color: Colors.blue,
+              child: Row(
+                children: [
+                  Expanded(
+                    flex:1,
+                    child: Center(
+                      child: Text('ALL',style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.grey[400],
+                        fontWeight: FontWeight.bold
+                      ),),
+                    ),
 
-                  children: [
-                    Icon(
-                      Icons.apps,
-                      size: 35,
-                      color: Colors.blue,
-                    )
-                  ],
-                ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Center(
+                    child: Text('MY CLASS',style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                      fontWeight: FontWeight.bold
+                    ),),
+                  ),)
+                ],
               ),
-              Container(
+              
+            ),
+            Expanded(
+              child: Container(
                 child: _nextHomePage(),
               ),
+            ),
 
 
-            ],
-          ),
-
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          if(position=='first_home_page' || button_icon){
-            setState(() {
-              position = 'second_home_page';
-              button_icon = false;
-            });
-          }
-          else if(position=='second_home_page'){
-            setState(() {
-              position ='first_home_page';
-              button_icon = true;
-            });
-          }
-
-        },
-        backgroundColor: Colors.blue,
-        child: Icon(button_icon? Icons.arrow_drop_down : Icons.arrow_drop_up_outlined),
+          ],
+        ),
 
       ),
+
       bottomNavigationBar: BottomNavigationBar(
         fixedColor: Colors.white,
         backgroundColor: Colors.blue,
 
 
         items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.home,color: Colors.white,),
+          BottomNavigationBarItem(icon: Icon(Icons.home,color: Colors.white,),
               label: 'Home'
-            ),
+          ),
           BottomNavigationBarItem(icon: Icon(Icons.calendar_today_rounded,color: Colors.white,),
-          label: 'Calander'),
+              label: 'Calander'),
           BottomNavigationBarItem(icon: Icon(Icons.notifications_active,color: Colors.white,),
-          label: 'Notifications')
+              label: 'Notifications')
 
 
         ],

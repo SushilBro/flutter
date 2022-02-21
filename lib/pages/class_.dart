@@ -15,23 +15,28 @@ class _ClassState extends State<Class> {
               Expanded(
                 flex: 2,
                 child: Container(
-                  height: 120.0,
+                  height: 140.0,
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        height: 120.0,
+                        height: 140.0,
                         child: Card(
+                          color: Colors.redAccent,
                           elevation:5,
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               Center(
                                 child: Icon(
-                                  Icons.departure_board_rounded,
+                                  Icons.people_outline,
                                   size: 50,
-                                  color: Colors.blue,
+                                  color: Colors.white,
                                 ),
                               ),
-                              Text('Transport')
+                              Text('Students',style: TextStyle(
+                                color: Colors.white
+                              ),)
                             ],
                           ),
                         ),
@@ -46,63 +51,29 @@ class _ClassState extends State<Class> {
               Expanded(
                 flex: 2,
                 child: Container(
-                  height: 120.0,
+                  height: 140.0,
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        height: 120.0,
+                        height: 140.0,
                         child: Card(
+                          color: Colors.teal,
                           elevation:5,
                           child: Column(
-                            children: <Widget>[
-                              Center(
-                                  child: Text(
-                                    'E',
-                                    style: TextStyle(
-                                        color: Colors.blue,
-                                        fontSize: 50,
-                                        fontWeight: FontWeight.bold
-                                    ),
-                                  )
-                              ),
-                              Text('Exam')
-                            ],
-                          ),
-                        ),
-                      ),
-
-                    ],
-
-                  ),
-                ),
-              ),
-
-            ],
-          ),
-        ),
-        Container(
-          child: Row(
-            children: <Widget>[
-              Expanded(
-                flex: 2,
-                child: Container(
-                  height: 120.0,
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        height: 120.0,
-                        child: Card(
-                          elevation:5,
-                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               Center(
                                   child: Icon(
-                                    Icons.add_to_photos_rounded,
+                                    Icons.group,
                                     size: 50,
-                                    color: Colors.blue,
-                                  )
+                                    color: Colors.white,
+                                  ),
                               ),
-                              Text('Homework')
+                              Text('Teachers',
+                              style: TextStyle(
+                                color: Colors.white
+                              ),)
                             ],
                           ),
                         ),
@@ -113,26 +84,73 @@ class _ClassState extends State<Class> {
                   ),
                 ),
               ),
+
+            ],
+          ),
+        ),
+        Container(
+          child: Row(
+            children: <Widget>[
               Expanded(
                 flex: 2,
                 child: Container(
-                  height: 120.0,
+                  height: 140.0,
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        height: 120.0,
+                        height: 140.0,
                         child: Card(
                           elevation:5,
+                          color: Colors.deepPurpleAccent,
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               Center(
                                   child: Icon(
-                                    Icons.home,
+                                    Icons.library_books,
                                     size: 50,
-                                    color: Colors.blue,
+                                    color: Colors.white,
                                   )
                               ),
-                              Text('Library')
+                              Text('Subjects',style: TextStyle(
+                                color: Colors.white
+                              ),)
+                            ],
+                          ),
+                        ),
+                      ),
+
+                    ],
+
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 2,
+                child: Container(
+                  height: 140.0,
+                  child: Column(
+                    children: <Widget>[
+                      SizedBox(
+                        height: 140.0,
+                        child: Card(
+                          elevation:5,
+                          color: Colors.deepOrangeAccent,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Center(
+                                  child: Icon(
+                                    Icons.grid_on_outlined,
+                                    size: 50,
+                                    color: Colors.white,
+                                  )
+                              ),
+                              Text('Timetable',style: TextStyle(
+                                color: Colors.white
+                              ),)
                             ],
                           ),
                         ),
@@ -152,23 +170,30 @@ class _ClassState extends State<Class> {
               Expanded(
                 flex: 2,
                 child: Container(
-                  height: 120.0,
+                  height: 140.0,
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       SizedBox(
-                        height: 120.0,
+                        height: 140.0,
                         child: Card(
                           elevation:5,
+                          color: Colors.blue,
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               Center(
                                 child: Icon(
-                                  Icons.grading_rounded,
+                                  Icons.surround_sound_rounded,
                                   size: 50,
-                                  color: Colors.blue,
+                                  color: Colors.white,
                                 ),
                               ),
-                              Text('Reports')
+                              Text('Notice',style: TextStyle(
+                                color: Colors.white
+                              ),)
                             ],
                           ),
                         ),
@@ -184,98 +209,32 @@ class _ClassState extends State<Class> {
               Expanded(
                 flex: 2,
                 child: Container(
-                  height: 120.0,
+                  height: 140.0,
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        height: 120.0,
+                        height: 140,
                         child: Card(
+                          color: Colors.orangeAccent,
                           elevation:5,
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               Center(
-                                child: Icon(
-                                  Icons.person_add,
-                                  size: 50,
-                                  color: Colors.blue,
-                                ),
-                              ),
-                              Text('HR')
-                            ],
-                          ),
-                        ),
-                      ),
-
-                    ],
-
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          child: Row(
-            children: <Widget>[
-              Expanded(
-                flex: 2,
-                child: Container(
-                  height: 120.0,
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        height: 120.0,
-                        child: Card(
-                          elevation:5,
-                          child: Column(
-                            children: <Widget>[
-                              Center(
-                                child: Icon(
-                                  Icons.settings,
-                                  size: 50,
-                                  color: Colors.blue,
-                                ),
-                              ),
-                              Text('Settings')
-                            ],
-                          ),
-                        ),
-                      ),
-
-                    ],
-
-                  ),
-                ),
-              ),
-              Expanded(
-                flex: 2,
-                child: Container(
-                  height: 120.0,
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        height: 120.0,
-                        child: GestureDetector(
-                          onTap: (){
-
-                          },
-                          child: Card(
-                            elevation:5,
-                            child: Column(
-                              children: <Widget>[
-                                Center(
-                                  child: Text(
-                                    'A',
-                                    style: TextStyle(
-                                        color: Colors.blue,
-                                        fontSize: 50,
-                                        fontWeight: FontWeight.bold
-                                    ),
+                                child: Text(
+                                  'E',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 50,
+                                      fontWeight: FontWeight.bold
                                   ),
                                 ),
-                                Text('Results')
-                              ],
-                            ),
+                              ),
+                              Text('Exams',style: TextStyle(
+                                color: Colors.white
+                              ),)
+                            ],
                           ),
                         ),
                       ),

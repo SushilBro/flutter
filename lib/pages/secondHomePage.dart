@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:samagyan_attendence/pages/class_.dart';
+import 'package:samagyan_attendence/pages/test.dart';
 class secondHomePage extends StatefulWidget {
 
   @override
@@ -9,12 +10,10 @@ class secondHomePage extends StatefulWidget {
 class _secondHomePageState extends State<secondHomePage> {
   var position='';
   Widget? nextContainer(){
-    if(position=='class'){
-      setState(() {
+    setState(() {
 
-      });
-      return Class();
-    }
+    });
+    return Test();
 
  }
 
@@ -33,19 +32,24 @@ class _secondHomePageState extends State<secondHomePage> {
                     children: <Widget>[
                       SizedBox(
                         height: 120.0,
-                        child: Card(
-                          elevation:5,
-                          child: Column(
-                            children: <Widget>[
-                              Center(
-                                child: Icon(
-                                  Icons.notifications_active,
-                                  size: 50,
-                                  color: Colors.blue,
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.pushNamed(context, '/notifications');
+                          },
+                          child: Card(
+                            elevation:5,
+                            child: Column(
+                              children: <Widget>[
+                                Center(
+                                  child: Icon(
+                                    Icons.notifications_active,
+                                    size: 50,
+                                    color: Colors.blue,
+                                  ),
                                 ),
-                              ),
-                              Text('Notification')
-                            ],
+                                Text('Notification')
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -64,19 +68,24 @@ class _secondHomePageState extends State<secondHomePage> {
                     children: <Widget>[
                       SizedBox(
                         height: 120.0,
-                        child: Card(
-                          elevation:5,
-                          child: Column(
-                            children: <Widget>[
-                              Center(
-                                child: Icon(
-                                  Icons.people_alt,
-                                  size: 50,
-                                  color: Colors.blue,
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.pushNamed(context, '/teachers');
+                          },
+                          child: Card(
+                            elevation:5,
+                            child: Column(
+                              children: <Widget>[
+                                Center(
+                                  child: Icon(
+                                    Icons.people_alt,
+                                    size: 50,
+                                    color: Colors.blue,
+                                  ),
                                 ),
-                              ),
-                              Text('Teachers')
-                            ],
+                                Text('Teachers')
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -330,10 +339,12 @@ class _secondHomePageState extends State<secondHomePage> {
                         child: GestureDetector(
                           onTap: () {
                             setState(() {
-                              position= 'class';
+                              // position= 'class';
+                              // print(position);
 
+                              print('clicked');
                             });
-
+                            Navigator.pushNamed(context, '/class');
 
                           },
                           child: Card(
@@ -400,7 +411,7 @@ class _secondHomePageState extends State<secondHomePage> {
                         height: 120.0,
                         child: GestureDetector(
                           onTap: (){
-
+                              Navigator.pushNamed(context, '/messages');
                           },
                           child: Card(
                             elevation:5,

@@ -9,17 +9,7 @@ class Test extends StatefulWidget {
 
 class _TestState extends State<Test> {
   var position='';
-  Widget? nextContainer(){
-    if(position=='class'){
-      setState(() {
 
-      });
-      return Class();
-    }
-    return secondHomePage();
-
-
-  }
 
   @override
   Widget build(BuildContext context) {
