@@ -1,31 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:samagyan_attendence/pages/Class/subjectsKanban.dart';
+import 'package:samagyan_attendence/pages/Class/subjectsList.dart';
 import 'package:samagyan_attendence/pages/NavigationDrawer/drawer.dart';
-import 'package:samagyan_attendence/pages/Teachers/teachers_kanban_view.dart';
-import 'package:samagyan_attendence/pages/Teachers/teachers_list_view.dart';
 
-class Teachers extends StatefulWidget {
-  const Teachers({Key? key}) : super(key: key);
+class Subjects extends StatefulWidget {
+  const Subjects({Key? key}) : super(key: key);
 
   @override
-  _TeachersState createState() => _TeachersState();
+  _SubjectsState createState() => _SubjectsState();
 }
 
-class _TeachersState extends State<Teachers> {
-  var icon='';
+class _SubjectsState extends State<Subjects> {
+  var icon='list_view';
   Widget? _nextContainer() {
     if (icon == 'list_view') {
       setState(() {
 
       });
-      return teachersList();
+      return subjectList();
+
     }
     else if (icon == 'kanban_view') {
       setState(() {
 
       });
-      return teachersKanban();
+      return subjectKanban();
+
     }
-    return teachersList();
+
   }
 
   @override
@@ -33,7 +35,7 @@ class _TeachersState extends State<Teachers> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Teachers',
+          'Subjects',
           style: TextStyle(
             color: Colors.white,
           ),
@@ -47,8 +49,19 @@ class _TeachersState extends State<Teachers> {
             height: 50,
             color: Colors.grey[300],
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                Text('Class:'),
+                DropdownButton<String>(
+                  items: <String>['1', '8', '9', '10'].map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  onChanged: (_) {},
+                ),
+                SizedBox(width: 225,),
                 GestureDetector(
                   onTap: (){
                     setState(() {
@@ -61,7 +74,6 @@ class _TeachersState extends State<Teachers> {
                     color: Colors.blue,
                   ),
                 ),
-                SizedBox(width: 10,),
                 GestureDetector(
                   onTap: () {
                     setState(() {
@@ -69,13 +81,13 @@ class _TeachersState extends State<Teachers> {
                     });
 
                   },
-                    child: Icon(
-                      Icons.apps,
-                      size: 30,
-                      color: Colors.blue,
+                  child: Icon(
+                    Icons.apps,
+                    size: 28,
+                    color: Colors.blue,
 
-                    ),
                   ),
+                ),
 
 
               ],
@@ -83,7 +95,7 @@ class _TeachersState extends State<Teachers> {
 
           ),
           Container(
-                child: _nextContainer(),
+            child: _nextContainer(),
           ),
 
 

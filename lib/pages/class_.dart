@@ -99,24 +99,29 @@ class _ClassState extends State<Class> {
                     children: <Widget>[
                       SizedBox(
                         height: 140.0,
-                        child: Card(
-                          elevation:5,
-                          color: Colors.deepPurpleAccent,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Center(
-                                  child: Icon(
-                                    Icons.library_books,
-                                    size: 50,
-                                    color: Colors.white,
-                                  )
-                              ),
-                              Text('Subjects',style: TextStyle(
-                                color: Colors.white
-                              ),)
-                            ],
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.pushNamed(context, '/subjects');
+                          },
+                          child: Card(
+                            elevation:5,
+                            color: Colors.deepPurpleAccent,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Center(
+                                    child: Icon(
+                                      Icons.library_books,
+                                      size: 50,
+                                      color: Colors.white,
+                                    )
+                                ),
+                                Text('Subjects',style: TextStyle(
+                                  color: Colors.white
+                                ),)
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -134,24 +139,29 @@ class _ClassState extends State<Class> {
                     children: <Widget>[
                       SizedBox(
                         height: 140.0,
-                        child: Card(
-                          elevation:5,
-                          color: Colors.deepOrangeAccent,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Center(
-                                  child: Icon(
-                                    Icons.grid_on_outlined,
-                                    size: 50,
-                                    color: Colors.white,
-                                  )
-                              ),
-                              Text('Timetable',style: TextStyle(
-                                color: Colors.white
-                              ),)
-                            ],
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.pushNamed(context, '/timeTable');
+                          },
+                          child: Card(
+                            elevation:5,
+                            color: Colors.deepOrangeAccent,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Center(
+                                    child: Icon(
+                                      Icons.grid_on_outlined,
+                                      size: 50,
+                                      color: Colors.white,
+                                    )
+                                ),
+                                Text('Timetable',style: TextStyle(
+                                  color: Colors.white
+                                ),)
+                              ],
+                            ),
                           ),
                         ),
                       ),

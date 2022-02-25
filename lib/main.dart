@@ -1,4 +1,12 @@
+
 import 'package:flutter/material.dart';
+import 'package:samagyan_attendence/pages/Class/Timetable/choosedDays.dart';
+import 'package:samagyan_attendence/pages/Class/Timetable/timeTable.dart';
+import 'package:samagyan_attendence/pages/Class/chossedSubject.dart';
+import 'package:samagyan_attendence/pages/Class/subjects.dart';
+import 'package:samagyan_attendence/pages/Events/events.dart';
+import 'package:samagyan_attendence/pages/Fees/feesMainPage.dart';
+import 'package:samagyan_attendence/pages/Fees/viewFees.dart';
 import 'package:samagyan_attendence/pages/Notification/mainNotificationPage.dart';
 import 'package:samagyan_attendence/pages/Teachers/teachers_main_page.dart';
 import 'package:samagyan_attendence/pages/class_.dart';
@@ -23,7 +31,14 @@ void main() => runApp(MaterialApp(
     '/class' : (context) => Class(),
     '/messages': (context) => Messages(),
     '/teachers': (context) => Teachers(),
-    '/notifications': (context) => NotificationMain()
+    '/notifications': (context) => NotificationMain(),
+    '/fees': (context) => FeesMain(),
+    '/viewFees': (context) => viewFees(),
+    '/subjects': (context) => Subjects(),
+    '/choosedSubjects' : (context) => choosedSubject(),
+    '/timeTable' : (context) => timeTable(),
+    '/choosedDays' : (context) => chooseDays(),
+    '/events' : (context) => Events()
 
   },
 ));

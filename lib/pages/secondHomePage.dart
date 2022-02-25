@@ -170,19 +170,24 @@ class _secondHomePageState extends State<secondHomePage> {
                     children: <Widget>[
                       SizedBox(
                         height: 120.0,
-                        child: Card(
-                          elevation:5,
-                          child: Column(
-                            children: <Widget>[
-                              Center(
-                                  child: Icon(
-                                    Icons.alarm,
-                                    size: 50,
-                                    color: Colors.blue,
-                                  )
-                              ),
-                              Text('Events')
-                            ],
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.pushNamed(context, '/events');
+                          },
+                          child: Card(
+                            elevation:5,
+                            child: Column(
+                              children: <Widget>[
+                                Center(
+                                    child: Icon(
+                                      Icons.alarm,
+                                      size: 50,
+                                      color: Colors.blue,
+                                    )
+                                ),
+                                Text('Events')
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -236,22 +241,27 @@ class _secondHomePageState extends State<secondHomePage> {
                     children: <Widget>[
                       SizedBox(
                         height: 120.0,
-                        child: Card(
-                          elevation:5,
-                          child: Column(
-                            children: <Widget>[
-                              Center(
-                                  child: Text(
-                                    '\$',
-                                    style: TextStyle(
-                                        color: Colors.blue,
-                                        fontSize: 50,
-                                        fontWeight: FontWeight.bold
-                                    ),
-                                  )
-                              ),
-                              Text('Fees')
-                            ],
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.pushNamed(context, '/fees');
+                          },
+                          child: Card(
+                            elevation:5,
+                            child: Column(
+                              children: <Widget>[
+                                Center(
+                                    child: Text(
+                                      '\$',
+                                      style: TextStyle(
+                                          color: Colors.blue,
+                                          fontSize: 50,
+                                          fontWeight: FontWeight.bold
+                                      ),
+                                    )
+                                ),
+                                Text('Fees')
+                              ],
+                            ),
                           ),
                         ),
                       ),

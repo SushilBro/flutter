@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:samagyan_attendence/pages/NavigationDrawer/drawer.dart';
 import 'package:samagyan_attendence/pages/Notification/allTabContainer.dart';
 class NotificationMain extends StatefulWidget {
   @override
@@ -35,77 +36,7 @@ class _NotificationMainState extends State<NotificationMain> {
         elevation: 0,
 
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Sushil Gautam',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20
-                ),),
-            ),
-            ListTile(
-              title: const Text('Samata Shikshya Niketan Secondary School, Pokhara-18',
-                style: TextStyle(
-                    fontSize: 18
-                ),
-              ),
-              onTap: (){
-
-              },
-            ),
-            ListTile(
-
-              title: const Text('Announcements'),
-              onTap: (){
-
-              },
-            ),
-            ListTile(
-              visualDensity: VisualDensity(horizontal: 0, vertical: 3),
-              title: const Text('Events'),
-              onTap: (){
-
-              },
-            ),
-            ListTile(
-              title: const Text('Fees'),
-              onTap: (){
-
-              },
-            ),
-            ListTile(
-              title: const Text('App Setting'),
-              onTap: (){
-
-              },
-            ),
-            ListTile(
-              title: const Text('Rate Us in App Store'),
-              onTap: (){
-
-              },
-            ),
-            ListTile(
-              title: const Text('Send Feedback and ideas'),
-              onTap: (){
-
-              },
-            ),
-            ListTile(
-              title: const Text('Contact Us'),
-              onTap: (){
-
-              },
-            )
-          ],
-        ),
-      ),
+      drawer: navigationDrawer(),
       body: Container(
         child: Column(
           children: <Widget>[
