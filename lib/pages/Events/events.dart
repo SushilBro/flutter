@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:nepali_date_picker/nepali_date_picker.dart' as picker;
 class Events extends StatefulWidget {
   const Events({Key? key}) : super(key: key);
 
@@ -7,8 +8,11 @@ class Events extends StatefulWidget {
 }
 
 class _EventsState extends State<Events> {
+  // NepaliDateTime? _selectedDateTime;
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(),
       body: Column(
@@ -18,9 +22,23 @@ class _EventsState extends State<Events> {
             child: Row(
              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-              Text('POUSH 29', style: TextStyle(
-                fontSize: 20
-              ),)
+                // RaisedButton(
+                //   color: Colors.pink,
+                //   onPressed: () async {
+                //     _selectedDateTime = await (
+                //       context: context,
+                //       initialDate: NepaliDateTime.now(),
+                //       firstDate: NepaliDateTime(2000),
+                //       lastDate: NepaliDateTime(2090),
+                //       language: Language.english,
+                //     );
+                //     setState((){});
+                //   },
+                //   child: Text(
+                //     _selectedDateTime.toString(),
+                //     style: TextStyle(color: Colors.white, fontSize: 40.0),
+                //   ),
+                // ),
             ],),
           ),
           Container(
@@ -34,24 +52,29 @@ class _EventsState extends State<Events> {
                       children: <Widget>[
                         SizedBox(
                           height: 140.0,
-                          child: Card(
-                            color: Colors.redAccent,
-                            elevation:5,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Center(
-                                  child: Icon(
-                                    Icons.alarm,
-                                    size: 50,
-                                    color: Colors.white,
+                          child: GestureDetector(
+                            onTap: (){
+                              Navigator.pushNamed(context, '/allEvents');
+                            },
+                            child: Card(
+                              color: Colors.redAccent,
+                              elevation:5,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Center(
+                                    child: Icon(
+                                      Icons.alarm,
+                                      size: 50,
+                                      color: Colors.white,
+                                    ),
                                   ),
-                                ),
-                                Text('ALL EVENTS',style: TextStyle(
-                                    color: Colors.white
-                                ),)
-                              ],
+                                  Text('ALL EVENTS',style: TextStyle(
+                                      color: Colors.white
+                                  ),)
+                                ],
+                              ),
                             ),
                           ),
                         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:samagyan_attendence/pages/class_.dart';
+import 'package:samagyan_attendence/pages/homePage.dart';
 import 'package:samagyan_attendence/pages/test.dart';
 class secondHomePage extends StatefulWidget {
 
@@ -8,14 +9,7 @@ class secondHomePage extends StatefulWidget {
 }
 
 class _secondHomePageState extends State<secondHomePage> {
-  var position='';
-  Widget? nextContainer(){
-    setState(() {
 
-    });
-    return Test();
-
- }
 
   @override
   Widget build(BuildContext context) {
@@ -348,14 +342,11 @@ class _secondHomePageState extends State<secondHomePage> {
                         height: 120.0,
                         child: GestureDetector(
                           onTap: () {
-                            setState(() {
-                              // position= 'class';
-                              // print(position);
-
-                              print('clicked');
-                            });
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //     builder: (_) => HomePageSamagyan(position: 'class'),),);
                             Navigator.pushNamed(context, '/class');
-
                           },
                           child: Card(
                             elevation:5,

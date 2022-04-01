@@ -5,12 +5,15 @@ import 'package:samagyan_attendence/pages/class_.dart';
 import 'package:samagyan_attendence/pages/firstHomePage.dart';
 import 'package:samagyan_attendence/pages/secondHomePage.dart';
 class HomePageSamagyan extends StatefulWidget {
+  // final String position;
+  // const HomePageSamagyan(
+  // { Key? key, required this.position}): super(key: key);
   @override
   _HomePageSamagyanState createState() => _HomePageSamagyanState();
 }
 
 class _HomePageSamagyanState extends State<HomePageSamagyan> {
-  var position='first_home_page';
+  String position='first_home_page';
 
   bool button_icon=true;
   Widget? _nextHomePage() {
@@ -26,7 +29,6 @@ class _HomePageSamagyanState extends State<HomePageSamagyan> {
       });
       return FirstHomePage();
     }
-
   }
 
   // @override
@@ -49,32 +51,34 @@ class _HomePageSamagyanState extends State<HomePageSamagyan> {
 
       ),
       drawer: navigationDrawer(),
-      body: Container(
-          child: Column(
-            children: <Widget>[
-              Container(
-                height: 50,
-                color: Colors.grey[300],
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+      body: SingleChildScrollView(
+        child: Container(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  height: 50,
+                  color: Colors.grey[300],
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
 
-                  children: [
-                    Icon(
-                      Icons.apps,
-                      size: 35,
-                      color: Colors.blue,
-                    )
-                  ],
+                    children: [
+                      Icon(
+                        Icons.apps,
+                        size: 35,
+                        color: Colors.blue,
+                      )
+                    ],
+                  ),
                 ),
-              ),
-              Container(
-                child: _nextHomePage(),
-              ),
+                Container(
+                  child: _nextHomePage(),
+                ),
 
 
-            ],
-          ),
+              ],
+            ),
 
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
